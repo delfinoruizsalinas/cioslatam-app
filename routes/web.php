@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\NoticiasController;
+use App\Http\Controllers\ConocenosController;
+use App\Http\Controllers\ComiteEjecutivoController;
+use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\PartnerController;
+use App\Http\Controllers\PartnersController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +21,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [Controller::class, 'index']);
+
+Route::controller(NoticiasController::class)->group(function(){
+    Route::GET('noticias', 'index');
+});
+
+Route::controller(ConocenosController::class)->group(function(){
+    Route::GET('conocenos', 'index');
+});
+
+Route::controller(ComiteEjecutivoController::class)->group(function(){
+    Route::GET('comite-ejecutivo', 'index');
+});
+
+Route::controller(ContactoController::class)->group(function(){
+    Route::GET('contacto', 'index');
+});
+
+Route::controller(PartnerController::class)->group(function(){
+    Route::GET('partner-slider', 'index');
+});
+
+Route::controller(PartnersController::class)->group(function(){
+    Route::GET('partners', 'register');
 });
