@@ -108,9 +108,6 @@ Insurgentes San Borja, Ciudad de México, CDMX</a></h4>
         </div>
       </section>
       
-      <?php
-        //include('api_block_partners.php');
-      ?>
       <!-- Sidebar -->
       @include('layouts.footer')
       <!-- End of Sidebar -->

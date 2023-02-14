@@ -86,9 +86,6 @@
           </div>
         </div>
       </section>      
-      <?php
-        //include('api_block_partners.php');
-      ?>
       <!-- Sidebar -->
       @include('layouts.footer')
       <!-- End of Sidebar -->

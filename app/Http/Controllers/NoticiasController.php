@@ -8,7 +8,7 @@ use Carbon\Carbon;
 class NoticiasController extends Controller
 {
     public function index(){
-        $title = "CIO'S LATAM - NOTICIAS";
+        $title = "CIO's LATAM - NOTICIAS";
         
         // NOTICIAS
         $url = 'https://api.rss2json.com/v1/api.json?rss_url=https://expansion.mx/rss/tecnologia';

@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ComiteEjecutivoController extends Controller
 {
     public function index(){
-        $title = "CIO'S LATAM - COMITÉ EJECUTIVO";
+        $title = "CIO's LATAM - COMITÉ EJECUTIVO";
         //COMITE
         $urlPresenc = 'http://188.166.16.108:1337';
         $urlComite = $urlPresenc.'/api/biografias?populate=imagen';

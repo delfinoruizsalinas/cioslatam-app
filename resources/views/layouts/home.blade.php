@@ -55,6 +55,9 @@
     .event-item-classic-figure img{
         border-radius: 1%;
     }
+    .post-corporate{
+      height: 290px;
+    }
 
     </style>
   </head>
@@ -115,6 +118,28 @@
         </div>
       </section>
 
+      <section class="section-lg bg-default" style="padding: 0px 0;">
+        <div class="container wow-outer">
+          <h3 class="text-center wow slideInDown">Noticias de nuestros Partners</h3>
+          <!-- Owl Carousel-->
+          <div class="owl-carousel owl-dots-dark wow fadeInUp" data-items="1" data-md-items="2" data-lg-items="3" data-dots="true" data-nav="false" data-stage-padding="15" data-loop="false" data-margin="30" data-mouse-drag="false">
+            @foreach($dataPost as $dataposts)
+            <div class="post-corporate post-corporate-img-bg">
+              <div class="post-corporate-bg" style="background-image: url( {{ $dataposts['url_img'] }} ); background-size: cover;"></div><a class="badge post-corporate-badge" href="#">{{ $dataposts['partner'] }}</a>
+              <h4 class="post-corporate-title"><a href="{{ $dataposts['link'] }}">{{ $dataposts['titulo'] }}</a></h4>
+              <div class="post-corporate-text">
+                <p>{{ Str::limit($dataposts['resumen'], 75) }}...</p>
+              </div>
+              <ul class="post-classic-meta">
+                <li style="color: #ffffff;font-size: 12px">{{ $dataposts['updatedAt'] }}</li>
+                <li><a class="post-classic-tag-secondary post-classic-tag" href="#">Partners</a></li>
+              </ul>
+            </div>
+            @endforeach  
+          </div>
+        </div>
+      </section>  
+      
       <section class="section tabs-custom tabs-horizontal tabs-creative" id="tabs-1">
         <div class="container container-wide">
           <div class="row">
@@ -382,9 +407,7 @@ Escríbenos y en breve nos pondremos en contacto contigo.</p>
           </div>
         </div>
       </section>
-      <!-- Partner -->
-      @include('layouts.partner_slider')
-      <!-- End of Partner -->
+
       <!-- Sidebar -->
       @include('layouts.footer')
       <!-- End of Sidebar -->

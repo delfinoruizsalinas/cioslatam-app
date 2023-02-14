@@ -10,6 +10,11 @@
             background-attachment: unset;
         }
       }
+      .post-minimal-date1 {
+          font-size: 15px;
+          line-height: 17px;
+          color: rgba(0, 0, 0, 0.5);
+      }
     </style>
   </head>
   <body>
@@ -31,7 +36,9 @@
           <div class="container">
             <div class="row row-50 justify-content-lg-between align-items-lg-center">
               <div class="col-lg-2 order-lg-2 text-center text-lg-right mr-xl-2">
+                <!--  
                 <div class="block-video-button"><a href="https://youtu.be/NLOkpy6OOnM" data-lightgallery="item"><span class="icon fa-play icon-md"></span></a></div>
+                -->
               </div>
               <div class="col-lg-9 col-xl-8 order-lg-1">
                 <h5 class="bunner-location"><span class="icon mdi mdi-map-marker icon-secondary"></span><a class="text-opacity-80" href="#"></a>Ciudad de México, <span id="date_now"></span></h5>
@@ -91,72 +98,59 @@
                   <input class="form-input" id="Website" type="text" name="Website">
                   <label class="form-label" for="Website">Website *</label>
                 </div>  
-                <div class="form-wrap">
-                  <label class="form-label" for="oficina">Oficinas Principales *</label>
-                  <select id="oficina" name="oficina">
-                    <option value="Aguascalientes">Aguascalientes</option><option value="Baja California">Baja California</option><option value="Baja California Sur">Baja California Sur</option><option value="Campeche">Campeche</option><option value="Coahuila">Coahuila</option><option value="Colima">Colima</option><option value="Chiapas">Chiapas</option><option value="Chihuahua">Chihuahua</option><option value="Ciudad de México">Ciudad de México</option><option value="Durango">Durango</option><option value="Estado de México">Estado de México</option><option value="Guanajuato">Guanajuato</option><option value="Guerrero">Guerrero</option><option value="Hidalgo">Hidalgo</option><option value="Jalisco">Jalisco</option><option value="Michoacán de Ocampo">Michoacán de Ocampo</option><option value="Morelos">Morelos</option><option value="Nayarit">Nayarit</option><option value="Nuevo León">Nuevo León</option><option value="Oaxaca">Oaxaca</option><option value="Puebla">Puebla</option><option value="Querétaro">Querétaro</option><option value="Quintana Roo">Quintana Roo</option><option value="San Luis Potosí">San Luis Potosí</option><option value="Sinaloa">Sinaloa</option><option value="Sonora">Sonora</option><option value="Tabasco">Tabasco</option><option value="Tamaulipas">Tamaulipas</option><option value="Tlaxcala">Tlaxcala</option><option value="Veracruz">Veracruz</option><option value="Yucatán">Yucatán</option><option value="Zacatecas">Zacatecas</option>
-                  </select>
-                  <p>Seleccionar el HQ principal en el caso de tener múltiples ubicaciones. No se utilizará esto para filtrar y/o determinar las posibles zonas de operación o entrega de servicio, es un dato meramente informativo.</p>
-                </div>
-                <div class="form-wrap">
-                  <label class="form-label" for="servicios">Servicio Principal que Ofrece *</label>
-                  <select id="servicios" name="servicios">
-                    <option value="Análisis de Riesgos y Vulnerabilidades">Análisis de Riesgos y Vulnerabilidades</option><option value="Atracción de Talento">Atracción de Talento</option><option value="Cloud Computing">Cloud Computing</option><option value="Comunicaciones Digitales">Comunicaciones Digitales</option><option value="DRP y BCP" selected="selected">DRP y BCP</option><option value="Evangelización y Promoción">Evangelización y Promoción</option><option value="Firewalls">Firewalls</option><option value="Hardware">Hardware</option><option value="Infraestructura">Infraestructura</option><option value="Software (Auditoría y Pen Testing)">Software (Auditoría y Pen Testing)</option><option value="Software (Desarrollo Seguro)">Software (Desarrollo Seguro)</option><option value="Virtualización">Virtualización</option>
-                  </select>
-                </div>                                                                        
-                <div class="form-wrap">
-                  <label class="form-label" for="service2">Servicio Secundario que Ofrece</label>
-                  <select id="servicios" name="servicios2">
-                    <option value="Análisis de Riesgos y Vulnerabilidades">Análisis de Riesgos y Vulnerabilidades</option><option value="Atracción de Talento">Atracción de Talento</option><option value="Cloud Computing">Cloud Computing</option><option value="Comunicaciones Digitales">Comunicaciones Digitales</option><option value="DRP y BCP">DRP y BCP</option><option value="Evangelización y Promoción">Evangelización y Promoción</option><option value="Firewalls">Firewalls</option><option value="Hardware">Hardware</option><option value="Infraestructura">Infraestructura</option><option value="Software (Auditoría y Pen Testing)">Software (Auditoría y Pen Testing)</option><option value="Software (Desarrollo Seguro)">Software (Desarrollo Seguro)</option><option value="Virtualización">Virtualización</option>
-                  </select>
-                </div> 
-                <div class="form-wrap">
-                  <label class="form-label" for="serviceDoc">Presentación de Servicios</label>
-                  <input type="file" value="PDF" name="serviceDoc" id="serviceDoc">
-                  <p>Agregue aquí el PDF de inicio para presentar su marca y servicios.</p>
-                </div>                 
-                    
-                <div class="form-wrap">
-                  <label class="checkbox checkbox-custom">
-                    <input type="checkbox" checked="" name="politica" id="politica"> Política de Privacidad *
-                  </label>
-                  
-                </div>
                 
                 <div class="row row-20 row-gutters-14">
                   <div class="col-sm-4">
                     <button class="button button-block button-gradient button-lg" type="submit">Enviar</button>
                   </div>
                 </div>
+
               </form>
             </div>
             <div class="col-lg-4 col-xl-3">
               <div class="block-aside">
                 <div class="block-aside-item">
-                  <h5 class="block-aside-title">Registro de Partners</h5>
-                </div>
-                <div class="block-aside-item">
                   <h5 class="block-aside-title">Resumen de Partners</h5>
-                  <!-- RD Search-->
-                 
+                  @foreach($partnerResumen as $pres)
+                  <a href="partners-resumen/{{ $pres['id'] }}" target="_blank">
+                    <div class="row" style="margin-top: 13px;">
+                      <div class="col-6">
+                        <img src="{{ $pres['imagen'] }}">
+                      </div>
+                      <div class="col-6">
+                        <span class="text-primary">{{ $pres['nombre'] }}</span>
+                      </div>
+                    </div>
+                  </a>
+                  @endforeach  
                 </div>
                 <div class="block-aside-item">
                   <h5 class="block-aside-title">Noticias de partners</h5>
+             
                   <div class="post-minimal">
-                    <h5 class="post-minimal-title"><a href="blog-post.html">Why You Should Visit Eventy With Your Friends This Year</a></h5>
-                    <p class="post-minimal-date">April 25, 2019</p>
+                    <h5 class="post-minimal-title"><a href="blog-post.html">not1</a></h5>
+                    <p class="post-minimal-date"></p>
                   </div>
                   <div class="post-minimal">
-                    <h5 class="post-minimal-title"><a href="blog-post.html">How Your Business Can Benefit From Eventy</a></h5>
-                    <p class="post-minimal-date">April 25, 2019</p>
+                    <h5 class="post-minimal-title"><a href="blog-post.html">Desarrollo Blockchain</a></h5>
+                    <p class="post-minimal-date"></p>
                   </div>
+                  <div class="post-minimal">
+                    <h5 class="post-minimal-title"><a href="blog-post.html">Internet de las Cosas (IoT)</a></h5>
+                    <p class="post-minimal-date"></p>
+                  </div>
+                  <div class="post-minimal">
+                    <h5 class="post-minimal-title"><a href="blog-post.html">¿Cuánto demora un pirata informático en descifrar tu contraseña?</a></h5>
+                    <p class="post-minimal-date"></p>
+                  </div>
+  
                 </div>
                 <div class="block-aside-item">
                   <h5 class="block-aside-title">Login</h5>
                   <!-- RD Mailform-->
                   <form class="rd-mailform text-left form-sm" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
                     <div class="form-button">
-                      <button class="button button-block button-gradient" type="submit">Login</button>
+                      <button class="button button-block button-gradient" type="button">Login</button>
                     </div>
                   </form>
                 </div>
@@ -166,9 +160,6 @@
           </div>
         </div>
       </section>      
-      <?php
-        //include('api_block_partners.php');
-      ?>
       <!-- Sidebar -->
       @include('layouts.footer')
       <!-- End of Sidebar -->

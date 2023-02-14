@@ -7,10 +7,40 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Carbon\Carbon;
+use View;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function __construct()
+    {
+         //FOOTER PARTNERS
+         $url_site = 'http://188.166.16.108:1337';
+         $urlPart = $url_site.'/api/partners?populate=imagen';
+         $responsePart = file_get_contents($urlPart);
+         $newsPartn = json_decode($responsePart);
+         
+         foreach ($newsPartn->data as $valuepart) {
+ 
+             $urlImg = $valuepart->attributes->imagen->data->attributes->url;
+ 
+             if(empty($valuepart->attributes->link_pange)){
+                 $link = '#';
+             }else{
+                 $link = $valuepart->attributes->link_pange;                        
+             }
+ 
+             $partn[] = array(
+                                 'link'=> $link,                                       
+                                 'imagen' => $url_site.$urlImg,           
+                             );
+         }
+ 
+         //return view('layouts.partner_slider', compact('partn')); 
+         View::share(['partner_slider' => $partn]);
+    }
+
     public function index(){
         
 
@@ -182,7 +212,36 @@ class Controller extends BaseController
         $newsDataMaster = json_decode($responseMem);
         $members = $newsDataMaster->data->attributes->numero;
         
+        //PARTNERS POST
+        $urlPost = $url_site.'/api/post-partners?populate=*';
+        $responsePost = file_get_contents($urlPost);
+        $newsDataPost = json_decode($responsePost);
+        
+        $i = 0;
+        foreach ($newsDataPost->data as $valuepost) {
+            if($i <=5){
+            $urlImg = $valuepost->attributes->imagen->data->attributes->url;
+            $link = $valuepost->attributes->link;
+            //$url_site = 
+            $resumen = $valuepost->attributes->resumen;
+            $partner = $valuepost->attributes->partner->data->attributes->nombre;
+            $updatedAt = $valuepost->attributes->updatedAt;
+            
+            //dd($partner);
 
-        return view('layouts.home', compact('title','noticias','dataVlog','dataPres','dataLife','dataAmigos','dataDebate','dataMaster','members'));
+            $dataPost[] = array('titulo'=>$valuepost->attributes->titulo,
+                                'link'=> $link,                                      
+                                'url_img' => $url_site . $urlImg, 
+                                'resumen' => $resumen,     
+                                'partner' => $partner,
+                                'updatedAt' => Carbon::parse($updatedAt)->format('d-m-Y')
+                            );
+            }
+            $i++;                 
+        }  
+        
+       //dd($dataPost);
+
+        return view('layouts.home', compact('title','noticias','dataVlog','dataPres','dataLife','dataAmigos','dataDebate','dataMaster','members','dataPost'));
     }
 }

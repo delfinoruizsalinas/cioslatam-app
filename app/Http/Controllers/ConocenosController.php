@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class ConocenosController extends Controller
 {
     public function index(){
-        $title = "CIO'S LATAM - CONOCENOS";
+        $title = "CIO's LATAM - CONOCENOS";
         
         return view('layouts.conocenos', compact('title'));
     }
