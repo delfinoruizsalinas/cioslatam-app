@@ -8,6 +8,9 @@ use App\Http\Controllers\ComiteEjecutivoController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PartnersController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+
 
 
 /*
@@ -20,6 +23,7 @@ use App\Http\Controllers\PartnersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 
 Route::get('/', [Controller::class, 'index']);
 
@@ -47,4 +51,18 @@ Route::controller(PartnersController::class)->group(function(){
     Route::GET('partners-registro', 'register');
     Route::GET('partners-resumen', 'page_resumen');
     Route::GET('partners-detalle/{id}', 'detalle');
+});
+
+
+
+Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
+Auth::routes();
+
+Route::get('logout', [HomeController::class, 'logout'])->name('logout');
+
+Route::group(['middleware'=>'auth'],function(){
+  // Descargar plantilla en word y subir escrito en pdf
+    Route::controller(PostController::class)->group(function(){
+        Route::get('/post-news', 'index');
+    });  
 });

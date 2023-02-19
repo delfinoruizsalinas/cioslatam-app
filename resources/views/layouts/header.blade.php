@@ -25,7 +25,7 @@
                         </li>
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url('/partners-registro') }}">Registro de Partners</a>
                         </li>
-                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url('/login') }}">Login</a>
+                        <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url('/login') }}" target="_blank">Login</a>
                         </li>                        
                     </ul>
                     </li>
