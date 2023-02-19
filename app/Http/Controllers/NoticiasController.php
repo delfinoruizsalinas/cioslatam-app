@@ -23,7 +23,7 @@ class NoticiasController extends Controller
                 }else{
                     $img = $value->thumbnail;
                 }
-                $dateformat =  Carbon::parse($value->pubDate)->format('d-m-Y h:m');
+                $dateformat = Carbon::parse($value->pubDate)->format('d-m-Y h:m');
                 $noticias[] = array('titulo' => $value->title, 'link'=> $value->link,'description'=> $value->description,'img'=>$img, 'fecha' =>$dateformat,'content'=>$value->content);
             }
             $i++;

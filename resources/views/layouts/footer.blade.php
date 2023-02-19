@@ -24,7 +24,7 @@
             <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-twitter" href="https://twitter.com/ciosmexoficial?lang=es" target="_blank"></a></li>
             <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-spotify" href="https://open.spotify.com/show/4lPhX5V3hBfH0sdOJjTkQS?si=e77f179810b444e0&nd=1" target="_blank"></a></li>
             <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-apple" href="https://podcasts.apple.com/mx/podcast/tecnologiando-con-cios-latam/id1646163844" target="_blank"></a></li>
-            <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-amazon" href="https://music.amazon.com.mx/podcasts/90dfc1f5-9351-47b8-a6db-8055ada4de5a/tecnologiando-con-cio's-latam" target="_blank"></a></li>
+            <li><a class="icon icon-sm icon-circle icon-circle-md icon-bg-white fa-amazon" href="https://music.amazon.com.mx/podcasts/90dfc1f5-9351-47b8-a6db-8055ada4de5a/tecnologiando-con-CIO's-latam" target="_blank"></a></li>
         </ul>
         </div>
     </div>

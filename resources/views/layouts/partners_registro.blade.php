@@ -42,7 +42,7 @@
               </div>
               <div class="col-lg-9 col-xl-8 order-lg-1">
                 <h5 class="bunner-location"><span class="icon mdi mdi-map-marker icon-secondary"></span><a class="text-opacity-80" href="#"></a>Ciudad de México, <span id="date_now"></span></h5>
-                <h1>Partners CIO's LATAM</h1>
+                <h1 style="text-transform: none;">Partners CIO's LATAM</h1>
                 <div class="countdown-gradient">
                   <div class="countdown" data-type="until" data-time="17 Aug 2020 16:00" data-format="dhms"></div>
                 </div>
@@ -51,11 +51,11 @@
           </div>
         </div>
       </section>
-      <section class="section section-md bg-gray-1">
+      <section class="section section-lg bg-gray-1 text-center">
         <div class="container">
-          <div class="row row-70 justify-content-xl-between">
-            <div class="col-lg-8">
-              <h3>Registro de partners</h3>
+          <div class="row justify-content-md-center">
+            <div class="col-md-9 col-lg-7">
+            <h3>Registro de Partners</h3>
               <!-- RD Mailform-->
               <form class="rd-form rd-mailform rd-form-centered">
                 <div class="form-wrap">
@@ -104,62 +104,12 @@
                     <button class="button button-block button-gradient button-lg" type="submit">Enviar</button>
                   </div>
                 </div>
-
               </form>
-            </div>
-            <div class="col-lg-4 col-xl-3">
-              <div class="block-aside">
-                <div class="block-aside-item">
-                  <h5 class="block-aside-title">Resumen de Partners</h5>
-                  @foreach($partnerResumen as $pres)
-                  <a href="partners-resumen/{{ $pres['id'] }}" target="_blank">
-                    <div class="row" style="margin-top: 13px;">
-                      <div class="col-6">
-                        <img src="{{ $pres['imagen'] }}">
-                      </div>
-                      <div class="col-6">
-                        <span class="text-primary">{{ $pres['nombre'] }}</span>
-                      </div>
-                    </div>
-                  </a>
-                  @endforeach  
-                </div>
-                <div class="block-aside-item">
-                  <h5 class="block-aside-title">Noticias de partners</h5>
-             
-                  <div class="post-minimal">
-                    <h5 class="post-minimal-title"><a href="blog-post.html">not1</a></h5>
-                    <p class="post-minimal-date"></p>
-                  </div>
-                  <div class="post-minimal">
-                    <h5 class="post-minimal-title"><a href="blog-post.html">Desarrollo Blockchain</a></h5>
-                    <p class="post-minimal-date"></p>
-                  </div>
-                  <div class="post-minimal">
-                    <h5 class="post-minimal-title"><a href="blog-post.html">Internet de las Cosas (IoT)</a></h5>
-                    <p class="post-minimal-date"></p>
-                  </div>
-                  <div class="post-minimal">
-                    <h5 class="post-minimal-title"><a href="blog-post.html">¿Cuánto demora un pirata informático en descifrar tu contraseña?</a></h5>
-                    <p class="post-minimal-date"></p>
-                  </div>
-  
-                </div>
-                <div class="block-aside-item">
-                  <h5 class="block-aside-title">Login</h5>
-                  <!-- RD Mailform-->
-                  <form class="rd-mailform text-left form-sm" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                    <div class="form-button">
-                      <button class="button button-block button-gradient" type="button">Login</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              
             </div>
           </div>
         </div>
-      </section>      
+      </section>
+     
       <!-- Sidebar -->
       @include('layouts.footer')
       <!-- End of Sidebar -->

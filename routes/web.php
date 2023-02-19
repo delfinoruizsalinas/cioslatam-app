@@ -44,6 +44,7 @@ Route::controller(PartnerController::class)->group(function(){
 });
 
 Route::controller(PartnersController::class)->group(function(){
-    Route::GET('partners', 'register');
-    Route::GET('partners-resumen/{id}', 'resumen');
+    Route::GET('partners-registro', 'register');
+    Route::GET('partners-resumen', 'page_resumen');
+    Route::GET('partners-detalle/{id}', 'detalle');
 });

@@ -32,6 +32,9 @@
       color: rgba(0, 0, 0, 0.5);
       font-size: 10px;
     }
+    .post-modern-date {
+      font-size: 12px;
+    }
     .box-countdown-dark {
 
     padding: 25px;
@@ -45,7 +48,7 @@
     .nav-tabs-cteative .nav-link {
       position: relative;
       font-weight: 700;
-      text-transform: uppercase;
+      text-transform: none;
       font-size: 12px;
       letter-spacing: 0.1em;
       color: rgba(255, 255, 255, 0.4);
@@ -105,7 +108,7 @@
                     <div class="post-modern">
                       <div class="post-modern-caption1">                    
                         <div class="row">
-                          <div class="col-md-6"><span class="post-modern-date1"><span class="icon mdi mdi-calendar"></span>{{ $noti['fecha'] }} <span class="icon mdi mdi-clock"></span>{{ $noti['hora'] }}</span><a href="{{ $noti['link'] }}" target="_blank"><img src="{{ $noti['img'] }}" alt="" /></a></div>                                                      
+                          <div class="col-md-6"><span class="post-modern-date1"><span class="icon mdi mdi-calendar"></span>{{ $noti['fecha'] }} <a href="{{ $noti['link'] }}" target="_blank"><img src="{{ $noti['img'] }}" alt="" /></a></div>                                                      
                           <div class="col-md-6"><p class="post-modern-title1"><a href="{{ $noti['link'] }}" style="color: rgb(8, 71, 90);" target="_blank">{{ Str::limit($noti['titulo'], 75) }}...</a></p></div>                          
                         </div>
                       </div>
@@ -152,7 +155,7 @@
               <div class="nav-tabs-cteative-wrap">
                 <ul class="nav nav-tabs nav-tabs-cteative">
                   <li class="nav-item" role="presentation"><a class="nav-link active" href="#tabs-1-1" data-toggle="tab">CIO’s Vlog</a></li>
-                  <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">Eventos Presenciales</a></li>
+                  <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-2" data-toggle="tab">CIO's Connect</a></li>
                   <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-3" data-toggle="tab">CIO’s Life</a></li>
                   <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-4" data-toggle="tab">Programa “Entre Amigos”</a></li>
                   <li class="nav-item" role="presentation"><a class="nav-link" href="#tabs-1-5" data-toggle="tab">Mesa de Debate</a></li>

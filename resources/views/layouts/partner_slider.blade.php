@@ -1,3 +1,8 @@
+<style>
+    .icon-sm {
+        font-size: 22px !important;
+    }
+</style>
 <section class="section-lg bg-gray-200 text-center">
     <div class="container">
         <div class="wow-outer">

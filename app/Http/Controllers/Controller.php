@@ -44,8 +44,8 @@ class Controller extends BaseController
     public function index(){
         
 
-        $title = "CIO'S LATAM - INICIO";
-        
+        $title = "CIO's LATAM - INICIO";
+        Carbon::setLocale('es');
         // NOTICIAS
         $url = 'https://api.rss2json.com/v1/api.json?rss_url=https://expansion.mx/rss/tecnologia';
         $response = file_get_contents($url);
@@ -59,7 +59,7 @@ class Controller extends BaseController
                 }else{
                     $img = $value->thumbnail;
                 }
-                $fecha =  Carbon::parse($value->pubDate)->format('d-m-Y');
+                $fecha = Carbon::parse($value->pubDate)->translatedFormat('d F, Y');
                 $hora =  Carbon::parse($value->pubDate)->format('h:m');
                 $noticias[] = array('titulo' => $value->title, 'link'=> $value->link,'description'=> $value->description,'img'=>$img, 'fecha' =>$fecha,'hora' =>$hora);
             }
@@ -82,7 +82,7 @@ class Controller extends BaseController
                 }
                 
                 $dataVlog[] = array('titulo'=>$valuevlog->attributes->titulo,
-                                    'fecha'=> Carbon::parse($valuevlog->attributes->fecha)->format('d-m-Y'), 
+                                    'fecha'=> Carbon::parse($valuevlog->attributes->fecha)->translatedFormat('d F, Y'), 
                                     'hora'=> Carbon::parse($valuevlog->attributes->hora)->format('h:m'),                                     
                                     'youtube' => $valuevlog->attributes->youtube,
                                     'url_img' => $url_site . $urlImg,                                    
@@ -105,7 +105,7 @@ class Controller extends BaseController
                 }
 
                 $dataPres[] = array('titulo'=>$valuepres->attributes->titulo,
-                                    'fecha'=> Carbon::parse($valuepres->attributes->fecha)->format('d-m-Y'),                                      
+                                    'fecha'=> Carbon::parse($valuepres->attributes->fecha)->translatedFormat('d F, Y'),                                      
                                     'ubicacion' => $valuepres->attributes->ubicacion,
                                     'url_img' => $url_site . $urlImg,                                    
                                 );
@@ -129,7 +129,7 @@ class Controller extends BaseController
                 }
         
                 $dataLife[] = array('titulo'=>$valuelife->attributes->titulo,
-                                    'fecha'=> Carbon::parse($valuelife->attributes->fecha)->format('d-m-Y'),                                      
+                                    'fecha'=> Carbon::parse($valuelife->attributes->fecha)->translatedFormat('d F, Y'),                                    
                                     'youtube' => $valuelife->attributes->youtube,
                                     'url_img' => $url_site . $urlImg,                                    
                                 );
@@ -152,7 +152,7 @@ class Controller extends BaseController
                 }
         
                 $dataAmigos[] = array('titulo'=>$valueamigos->attributes->titulo,
-                                    'fecha'=> Carbon::parse($valueamigos->attributes->fecha)->format('d-m-Y'),                                      
+                                    'fecha'=> Carbon::parse($valueamigos->attributes->fecha)->translatedFormat('d F, Y'),                                      
                                     'youtube' => $valueamigos->attributes->youtube,
                                     'url_img' => $url_site . $urlImg,                                    
                                 );
@@ -175,7 +175,7 @@ class Controller extends BaseController
                 }
         
                 $dataDebate[] = array('titulo'=>$valuedebate->attributes->titulo,
-                                    'fecha'=> Carbon::parse($valuedebate->attributes->fecha)->format('d-m-Y'),                                      
+                                    'fecha'=> Carbon::parse($valuedebate->attributes->fecha)->translatedFormat('d F, Y'),                                      
                                     'youtube' => $valuedebate->attributes->youtube,
                                     'url_img' => $url_site . $urlImg,                                    
                                 );
@@ -198,7 +198,7 @@ class Controller extends BaseController
                 }
         
                 $dataMaster[] = array('titulo'=>$valuemaster->attributes->titulo,
-                                    'fecha'=> Carbon::parse($valuemaster->attributes->fecha)->format('d-m-Y'),                                      
+                                    'fecha'=> Carbon::parse($valuemaster->attributes->fecha)->translatedFormat('d F, Y'),                                       
                                     'youtube' => $valuemaster->attributes->youtube,
                                     'url_img' => $url_site . $urlImg,                                    
                                 );
@@ -217,6 +217,9 @@ class Controller extends BaseController
         $responsePost = file_get_contents($urlPost);
         $newsDataPost = json_decode($responsePost);
         
+
+        
+
         $i = 0;
         foreach ($newsDataPost->data as $valuepost) {
             if($i <=5){
@@ -234,7 +237,7 @@ class Controller extends BaseController
                                 'url_img' => $url_site . $urlImg, 
                                 'resumen' => $resumen,     
                                 'partner' => $partner,
-                                'updatedAt' => Carbon::parse($updatedAt)->format('d-m-Y')
+                                'updatedAt' => Carbon::parse($updatedAt)->translatedFormat('d F, Y')
                             );
             }
             $i++;                 

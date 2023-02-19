@@ -25,12 +25,12 @@
       <!-- Page Header-->
       @include('layouts.header')
       <!-- Swiper-->
-      <section class="parallax-container" data-parallax-img="/dash/images/icon-lists-title-bg.jpg">
+      <section class="parallax-container" data-parallax-img="/dash/images/cios/shaking-hands-2499629_960_720.jpg">
         <div class="parallax-content breadcrumbs-custom context-dark"> 
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-12 col-lg-9">
-                <h2 class="breadcrumbs-custom-title">{{ $resumenId[0]['titulo'] }}</h2>
+                <h2 class="breadcrumbs-custom-title">Resumen de Partners</h2>
                 <ul class="breadcrumbs-custom-path">
                   <li><a href="/">Inicio</a></li>
                 </ul>
@@ -39,58 +39,20 @@
           </div>
         </div>
       </section>
-      <section class="section section-lg bg-default">
+      <section class="section section-lg bg-default text-center">
         <div class="container">
-          <div class="row row-50">
-            <div class="col-lg-8">
-              <div class="team-item-info">
-                <div class="team-item-info-name">
-                  <h3>{{ $resumenId[0]['titulo'] }}</h3>
-                </div>
-                <ul class="team-info-list">
-                
-                  <li><span class="icon mdi mdi-account"></span>{{ $resumenId[0]['nombre'] }}</li>
-                  <li><span class="icon mdi mdi-phone"></span><a href="tel:#">{{ $resumenId[0]['telefono'] }}</a></li>
-                  <li><span class="icon mdi mdi-email-outline"></span><a href="mailto:#">{{ $resumenId[0]['correo'] }}</a></li>
-                  <li><span class="icon mdi mdi-web"></span><a href="{{ $resumenId[0]['website'] }}" target="_blank">{{ $resumenId[0]['website'] }}</a></li>
-                </ul>
-                <br>
-                <h5>Resumen</h5>
-                <p class="post-classic-meta">{{ $resumenId[0]['resumen'] }}</p>
-                <br>
-                <h5>Oficinas</h5>
-                <p class="post-classic-meta">{{ $resumenId[0]['oficinas'] }}</p>
-                <br>
-                <h5>Clientes</h5>
-                <p class="post-classic-meta">{{ $resumenId[0]['clientes'] }}</p>
-                <br>            
-                <h5>Servicios</h5>
-                <p class="post-classic-meta">{{ $resumenId[0]['servicios'] }}</p>
-                <br>
-
-          
-                <!--
-                <article class="quote-primary">
-                  <div class="quote-primary-body">
-                    <div class="quote-primary-text">
-                      <p class="q">{{ $resumenId[0]['servicios'] }}</p>
-                    </div>
-                  </div>
-                </article>-->
-
-              </div>
+          <h3 class="title-decorate title-decorate-center">Resumen de Partners</h3>
+          <div class="row row-30">
+            @foreach($partnerResumen as $key => $pres)
+            <div class="col-sm-6 col-lg-3">
+              <a class="box-sponsor wow fadeInUp" href="partners-detalle/{{ $pres['id'] }}" target="_blank" data-wow-delay="{{ $key }}s">
+                <img src="{{ $pres['imagen'] }}" alt="" width="270" height="119" />
+              </a>
             </div>
-            <div class="col-lg-4">
-              <div class="block-decorate-img">
-                <div class="block-decorate-inner"><img src="{{ $resumenId[0]['imagen'] }}" alt="{{ $resumenId[0]['nombre'] }}"/>
-                </div>
-              </div>
-                <h5>Años en el mercado</h5>
-                <p class="post-classic-meta">{{ $resumenId[0]['anios_mercado'] }}</p>
-            </div>
+            @endforeach  
           </div>
         </div>
-      </section>      
+      </section>
       <!-- Sidebar -->
       @include('layouts.footer')
       <!-- End of Sidebar -->

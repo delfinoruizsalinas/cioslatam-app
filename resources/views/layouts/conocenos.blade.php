@@ -64,7 +64,7 @@
                 <h5 class="pricing-corporate-title">Objetivos</h5>
 
                 <ul class="pricing-corporate-list">
-                  <li>Posicionar a CIO'S LATAM como un organismo reconocido que influya en la definición de estrategias, políticas, evaluación, dictamen y certificación en las diferentes disciplinas que conforman la industria de las Tecnologías de la Información y las Comunicaciones.</li>
+                  <li>Posicionar a CIO's LATAM como un organismo reconocido que influya en la definición de estrategias, políticas, evaluación, dictamen y certificación en las diferentes disciplinas que conforman la industria de las Tecnologías de la Información y las Comunicaciones.</li>
                 </ul>
               </div>
             </div>
@@ -79,7 +79,7 @@
             <div class="col-lg-6">
               <div class="text-with-divider">
                 <div class="divider"></div>
-                <h4>CIO'S LATAM es una comunidad inspiradora que fomenta la unión y el apoyo entre sus asociados basados en sus propias experiencias</h4>
+                <h4>CIO's LATAM es una comunidad inspiradora que fomenta la unión y el apoyo entre sus asociados basados en sus propias experiencias</h4>
               </div>
               <p>Somos una Asociación Civil fundada en diciembre del 2012. Se crea como un espacio de participación e intercambio de experiencias, conocimientos y visiones para los responsables de encausar y dar sentido al uso y aprovechamiento de las Tecnologías de Información y Comunicaciones (TIC), en las Organizaciones. La participación de los CIOs de los distintos sectores y regiones del país le permitirá a la asociación consolidarse como un grupo que influya de manera positiva y responsable en la toma de decisiones sobre TICs, en beneficio del país.</p>
             </div>

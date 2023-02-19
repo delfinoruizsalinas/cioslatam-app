@@ -7,34 +7,18 @@ use Illuminate\Http\Request;
 class PartnersController extends Controller
 {
     public function index(){
-        $title = "CIO'S LATAM - PARTNERS";
-        return view('layouts.partners', compact('title'));    
+       
     }
 
     public function register()
     {
-        $title = "CIO'S LATAM - PARTNERS REGISTRO";
-        //RESUMEN DE PARTNERS
-        $url_site = 'http://188.166.16.108:1337';
-        $urlPart = $url_site.'/api/resumen-de-partners?populate=imagen';
-        $responsePart = file_get_contents($urlPart);
-        $newsPartn = json_decode($responsePart);
-        
-        //dd($newsPartn);
-        foreach ($newsPartn->data as $valuepart) {
-
-            $urlImg = $valuepart->attributes->imagen->data->attributes->url;
-            $partnerResumen[] = array(
-                                'id'=> $valuepart->id,                                       
-                                'imagen' => $url_site.$urlImg,
-                                'nombre' =>  $valuepart->attributes->nombre,           
-                            );
-        }
-        return view('layouts.partners', compact('title','partnerResumen'));   
+        $title = "CIO's LATAM - PARTNERS REGISTRO";
+       
+        return view('layouts.partners_registro', compact('title'));   
     }
 
-    public function resumen($id)
-    {
+    public function detalle($id)
+    {   
         //RESUMEN DE PARTNERS
         $url_site = 'http://188.166.16.108:1337';
         $urlPart = $url_site.'/api/resumen-de-partners/'.$id.'?populate=imagen';
@@ -55,8 +39,32 @@ class PartnersController extends Controller
                             'anios_mercado' => $newsPartn->data->attributes->anios_mercado,                                                                                                                                                                                                                                        
                             'imagen' => $url_site.$urlImg,       
                         );
-        $title = "CIO'S LATAM - ".$newsPartn->data->attributes->titulo;
-        return view('layouts.partners_resumen', compact('title','resumenId'));   
+        $title = "CIO's LATAM - ".$newsPartn->data->attributes->titulo;
+        //dd($title);
+                         
+        return view('layouts.partners_detalle', compact('title','resumenId'));   
+    }
+
+    public function page_resumen()
+    {   
+        $title = "CIO's LATAM - PARTNERS RESUMEN";
+        //RESUMEN DE PARTNERS
+        $url_site = 'http://188.166.16.108:1337';
+        $urlPart = $url_site.'/api/resumen-de-partners?populate=imagen';
+        $responsePart = file_get_contents($urlPart);
+        $newsPartn = json_decode($responsePart);
+        
+        //dd($newsPartn);
+        foreach ($newsPartn->data as $valuepart) {
+
+            $urlImg = $valuepart->attributes->imagen->data->attributes->url;
+            $partnerResumen[] = array(
+                                'id'=> $valuepart->id,                                       
+                                'imagen' => $url_site.$urlImg,
+                                'nombre' =>  $valuepart->attributes->nombre,           
+                            );
+        }
+        return view('layouts.partners_resumen', compact('title','partnerResumen'));   
     }
     
 }
