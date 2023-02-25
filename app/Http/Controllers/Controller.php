@@ -43,7 +43,6 @@ class Controller extends BaseController
 
     public function index(){
         
-
         $title = "CIO's LATAM - INICIO";
         Carbon::setLocale('es');
         // NOTICIAS
@@ -213,37 +212,15 @@ class Controller extends BaseController
         $members = $newsDataMaster->data->attributes->numero;
         
         //PARTNERS POST
-        $urlPost = $url_site.'/api/post-partners?populate=*';
-        $responsePost = file_get_contents($urlPost);
-        $newsDataPost = json_decode($responsePost);
-        
+        $publicacion = \DB::table('post_partner')
+        ->join('users', 'post_partner.id_usuario', '=', 'users.id')
+        ->select('post_partner.*','users.partner')
+        ->orderBy('updated_at','DESC')
+        ->get();
+        $dataPost = json_decode($publicacion);
 
         
-
-        $i = 0;
-        foreach ($newsDataPost->data as $valuepost) {
-            if($i <=5){
-            $urlImg = $valuepost->attributes->imagen->data->attributes->url;
-            $link = $valuepost->attributes->link;
-            //$url_site = 
-            $resumen = $valuepost->attributes->resumen;
-            $partner = $valuepost->attributes->partner->data->attributes->nombre;
-            $updatedAt = $valuepost->attributes->updatedAt;
-            
-            //dd($partner);
-
-            $dataPost[] = array('titulo'=>$valuepost->attributes->titulo,
-                                'link'=> $link,                                      
-                                'url_img' => $url_site . $urlImg, 
-                                'resumen' => $resumen,     
-                                'partner' => $partner,
-                                'updatedAt' => Carbon::parse($updatedAt)->translatedFormat('d F, Y')
-                            );
-            }
-            $i++;                 
-        }  
-        
-       //dd($dataPost);
+        //dd($dataPost);
 
         return view('layouts.home', compact('title','noticias','dataVlog','dataPres','dataLife','dataAmigos','dataDebate','dataMaster','members','dataPost'));
     }

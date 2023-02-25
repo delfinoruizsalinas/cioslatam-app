@@ -9,7 +9,10 @@ use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PartnersController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostnewsController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ImageController;
+
 
 
 
@@ -48,21 +51,32 @@ Route::controller(PartnerController::class)->group(function(){
 });
 
 Route::controller(PartnersController::class)->group(function(){
-    Route::GET('partners-registro', 'register');
+    Route::GET('partners-registro', 'index');
+    Route::POST('partners-free-registro', 'register');
     Route::GET('partners-resumen', 'page_resumen');
     Route::GET('partners-detalle/{id}', 'detalle');
+    Route::GET('partners-detalle-contenido/{id}', 'detalleContenido');
 });
 
 
 
-Route::get('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
+Route::GET('/login', [App\Http\Controllers\HomeController::class, 'index'])->name('login');
 Auth::routes();
 
-Route::get('logout', [HomeController::class, 'logout'])->name('logout');
+Route::GET('logout', [HomeController::class, 'logout'])->name('logout');
 
 Route::group(['middleware'=>'auth'],function(){
   // Descargar plantilla en word y subir escrito en pdf
-    Route::controller(PostController::class)->group(function(){
-        Route::get('/post-news', 'index');
+    Route::controller(PostnewsController::class)->group(function(){
+        
+        Route::GET('/partners', 'index');
+        Route::GET('/post-news', 'getPostPartner');
+        Route::GET('/get-users', 'getUsers');
+        Route::GET('/get-list-partner', 'getList');
+        Route::POST('/update-user', 'editUser');
+        Route::POST('/post-partner', 'store');
+        Route::GET('/actualizar-resumen', 'resumenAdmin');
+        Route::POST('/update-resumen', 'editarResumen');
+        
     });  
 });

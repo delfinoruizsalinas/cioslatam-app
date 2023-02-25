@@ -18,7 +18,7 @@
             <div class="rd-navbar-main-element">
                 <div class="rd-navbar-nav-wrap">
                 <ul class="rd-navbar-nav">
-      
+        
                     <li class="rd-nav-item active text-menu"><a class="rd-nav-link" href="#">Partners</a>
                     <ul class="rd-menu rd-navbar-dropdown">
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url('/partners-resumen') }}">Resumen de Partners</a>
@@ -28,28 +28,30 @@
                         <li class="rd-dropdown-item"><a class="rd-dropdown-link" href="{{ url('/login') }}" target="_blank">Login</a>
                         </li>                        
                     </ul>
+                    <li class="rd-nav-item text-menu"><a class="rd-nav-link" href="#">Miembros</a>
+                    </li>
                     </li>
                     <li class="rd-nav-item text-menu"><a class="rd-nav-link" href="#">Eventos</a>
                     <ul class="rd-menu rd-navbar-megamenu">
                         <li class="rd-megamenu-item">
                         <h6 class="rd-megamenu-title"></h6>
                         <ul class="rd-megamenu-list">
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="{{ url('/cios-vlog') }}">CIO’s Vlog</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="{{ url('/cios-presenciales') }}">CIO's Connect</a></li>
+                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="#">CIO’s Vlog</a></li>
+                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="#">CIO's Connect</a></li>
                         </ul>
                         </li>
                         <li class="rd-megamenu-item">
                         <h6 class="rd-megamenu-title"></h6>
                         <ul class="rd-megamenu-list">
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="{{ url('/cios-life') }}">CIO’s Life</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="{{ url('/cios-entre-amigos') }}">Programa “Entre Amigos”</a></li>
+                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="#">CIO’s Life</a></li>
+                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="#">Programa “Entre Amigos”</a></li>
                         </ul>
                         </li>
                         <li class="rd-megamenu-item">
                         <h6 class="rd-megamenu-title"></h6>
                         <ul class="rd-megamenu-list">
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="{{ url('/cios-mesa-de-debate') }}">Mesa de Debate</a></li>
-                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="{{ url('/cios-master-class') }}">CIO’s Master Class</a></li>
+                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="#">Mesa de Debate</a></li>
+                            <li class="rd-megamenu-list-item"><a class="rd-megamenu-list-link" href="#">CIO’s Master Class</a></li>
                         </ul>
                         </li>
                     </ul>

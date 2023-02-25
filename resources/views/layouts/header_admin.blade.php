@@ -10,7 +10,7 @@
                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                     <!-- RD Navbar Brand-->
                     <div class="rd-navbar-brand">
-                        <a class="brand" href="/">
+                        <a class="brand" href="#">
                             <img id="fixlogo" class="brand-logo-light" src="{{ asset('/dash/images/cios/logo_footer.png') }}" alt="" width="150" height="38"/>
                         </a>
                     </div>
@@ -18,17 +18,28 @@
                 <div class="rd-navbar-main-element">
                     <div class="rd-navbar-nav-wrap">
                         <ul class="rd-navbar-nav">
-                            <li class="rd-nav-item text-menu"><a class="rd-nav-link" href="{{ url('/resumen-partner') }}">Resumen de Partners</a>
+                            @if(Auth::user()->rol == "partner")
+                            <li class="rd-nav-item text-menu"><a class="rd-nav-link" href="{{ url('/actualizar-resumen') }}">Resumen de Partners</a>
                             </li>
                             <li class="rd-nav-item text-menu"><a class="rd-nav-link" href="{{ url('/post-news') }}">Publicar Noticias</a>
                             </li>
+                            @elseif( Auth::user()->rol == "admin")
+                            <li class="rd-nav-item text-menu"><a class="rd-nav-link" href="{{ url('/post-news') }}">Administrar Usuarios</a>
+                            </li>
+                            @endif
                             <li class="rd-nav-item text-menu"><a class="rd-nav-link" href="{{ url('/logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i>
-        Salir</a>
+                                 Salir</a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <a class="button button-secondary button-sm" href="#">{{ Auth::user()->name }}</a>
+                @if(Auth::user()->rol == "partner")
+                    <a class="button button-secondary button-sm" href="#"><img src="{{ Auth::user()->partner }}" alt="" width="250" /></a>
+                @elseif( Auth::user()->rol == "admin")
+                    <a class="button button-secondary button-sm" href="#">{{ Auth::user()->partner }}</a>
+                @endif
+                
+
                 
             </div>
         </div>

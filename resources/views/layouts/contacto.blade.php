@@ -45,9 +45,9 @@
           <div class="row row-50">
             <div class="col-md-6 col-lg-4">
               <div class="box-icon-classic">
-                <div class="box-icon-inner decorate-triangle decorate-color-secondary"><span class="icon-xl linearicons-phone-incoming icon-gradient-1"></span></div>
+                <div class="box-icon-inner decorate-triangle decorate-color-secondary"><img src="/dash/images/cios/icon-vector.jpg" width="95"/></div>
                 <div class="box-icon-caption">
-                  <h4><a href="tel:#">00-0000-0000</a></h4>
+                  <h4><a href="tel:#">+52 55 7225 6615</a></h4>
                   <p>Puedes llamarnos en cualquier momento</p>
                 </div>
               </div>

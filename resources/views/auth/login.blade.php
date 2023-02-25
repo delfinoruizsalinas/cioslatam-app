@@ -7,7 +7,7 @@
     <!-- Custom fonts for this template-->
     <style>
         .bg-password-image2{
-            background: url({{ asset('dash/images/cios/hacker-1944688_640.jpg') }});
+            background: url({{ asset('dash/images/cios/latam_login.jpg') }});
             background-position: center;
             background-size: cover;  
         }

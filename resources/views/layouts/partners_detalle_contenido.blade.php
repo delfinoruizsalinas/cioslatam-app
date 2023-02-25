@@ -1,3 +1,4 @@
+@inject('carbon', 'Carbon\Carbon')
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
@@ -25,12 +26,12 @@
       <!-- Page Header-->
       @include('layouts.header')
       <!-- Swiper-->
-      <section class="parallax-container" data-parallax-img="/dash/images/cios/shaking-hands-2499629_960_720.jpeg">
+      <section class="parallax-container" data-parallax-img="/dash/images/cios/office-620817_1280.jpeg">
         <div class="parallax-content breadcrumbs-custom context-dark"> 
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-12 col-lg-9">
-                <h2 class="breadcrumbs-custom-title">Contenido de nuestros Partners</h2>
+                <h2 class="breadcrumbs-custom-title"> {{ $detalle_contenido[0]->titulo }}</h2>
                 <ul class="breadcrumbs-custom-path">
                   <li><a href="/">Inicio</a></li>
                 </ul>
@@ -39,23 +40,30 @@
           </div>
         </div>
       </section>
-      <section class="section section-lg bg-default text-center">
+     
+      <section class="section section-lg bg-default">
         <div class="container">
-          <h3 class="title-decorate title-decorate-center">Resumen de Partners</h3>
-          <div class="row row-30">
-
-
-            @foreach($detalle_contenido as $key => $pres)
-              
-              <div class="col-sm-6 col-lg-3">
-                <a class="box-sponsor wow fadeInUp" href="partners-detalle/{{ $pres->id_resumen }}" target="_blank" data-wow-delay="{{ $key }}s">
-                <h2 class="heading-font text-accent-3"><img src="{{ $pres->partner }}" /></h2>
-                </a>
+          <div class="row row-50 justify-content-lg-between">
+            <div class="col-lg-6">
+              <ul class="blog-post-meta">
+                <li><a class="badge" href="#"> {{ $detalle_contenido[0]->partner }}</a></created_at>
+                
+                <li><span class="icon mdi mdi-clock"></span>
+                  {{ \Carbon\Carbon::parse($detalle_contenido[0]->updated_at)->translatedFormat('d F, Y') }}
+                </li>
+              </ul>
+              <h3 class="blog-post-title"> {{ $detalle_contenido[0]->titulo }}</h3>
+              <div class="blog-post-content">
+              {!! html_entity_decode($detalle_contenido[0]->resumen) !!}  
               </div>
-            @endforeach  
+            </div>
+            <div class="col-lg-6 col-xl-5"><img src="/news/{{$detalle_contenido[0]->imagen}}" alt="" width="518" height="569"/>
+            </div>
           </div>
+
         </div>
-      </section>
+      </section>  
+   
       <!-- Sidebar -->
       @include('layouts.footer')
       <!-- End of Sidebar -->

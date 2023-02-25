@@ -1,3 +1,4 @@
+@inject('carbon', 'Carbon\Carbon')
 <!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
@@ -123,19 +124,18 @@
 
       <section class="section-lg bg-default" style="padding: 0px 0;">
         <div class="container wow-outer">
-          <h3 class="text-center wow slideInDown">Noticias de nuestros Partners</h3>
+          <h3 class="text-center wow slideInDown">Contenido de nuestros Partners</h3>
           <!-- Owl Carousel-->
           <div class="owl-carousel owl-dots-dark wow fadeInUp" data-items="1" data-md-items="2" data-lg-items="3" data-dots="true" data-nav="false" data-stage-padding="15" data-loop="false" data-margin="30" data-mouse-drag="false">
             @foreach($dataPost as $dataposts)
+           
             <div class="post-corporate post-corporate-img-bg">
-              <div class="post-corporate-bg" style="background-image: url( {{ $dataposts['url_img'] }} ); background-size: cover;"></div><a class="badge post-corporate-badge" href="#">{{ $dataposts['partner'] }}</a>
-              <h4 class="post-corporate-title"><a href="{{ $dataposts['link'] }}">{{ $dataposts['titulo'] }}</a></h4>
-              <div class="post-corporate-text">
-                <p>{{ Str::limit($dataposts['resumen'], 75) }}...</p>
-              </div>
+              <div class="post-corporate-bg" style="background-image: url(news/{{ $dataposts->imagen }} ); background-size: cover;"></div><a class="badge post-corporate-badge" href="partners-detalle-contenido/{{ $dataposts->id }}"><img src="{{ $dataposts->partner }}" alt=""></a>
+              <h4 class="post-corporate-title"><a href="partners-detalle-contenido/{{ $dataposts->id }}" target="_blank"> {{ $dataposts->titulo }}</a></h4>
+              
               <ul class="post-classic-meta">
-                <li style="color: #ffffff;font-size: 12px">{{ $dataposts['updatedAt'] }}</li>
-                <li><a class="post-classic-tag-secondary post-classic-tag" href="#">Partners</a></li>
+                {{ \Carbon\Carbon::setLocale("es") }}
+                <li style="color: #ffffff;font-size: 12px"> {{ \Carbon\Carbon::parse($dataposts->updated_at)->translatedFormat('d F, Y') }}</li>
               </ul>
             </div>
             @endforeach  
